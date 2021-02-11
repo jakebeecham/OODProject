@@ -23,8 +23,18 @@ namespace MCU_Hub
         }
 
         public Film(string title, DateTime releaseDate, byte duration) :
-            this(title, releaseDate, duration, "0", "Unknown", "Unknown", PhaseType.Zero)
-        { }
+            this(title, releaseDate, duration, "0", "Unknown", "Unknown", PhaseType.Zero) { }
+
+        public Film() : this("Unknown", new DateTime(2000, 1, 1), 0) { }
+
+        #endregion
+
+        #region Methods
+
+        public override string ToString()
+        {
+            return base.ToString() + "\t|\tFilm";
+        }
 
         #endregion
     }

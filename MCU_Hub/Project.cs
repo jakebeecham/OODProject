@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MCU_Hub
 {
-    public abstract class Project : IComparable
+    public abstract class Project
     {
         public enum PhaseType { Zero, One, Two, Three, Four }
         
@@ -49,15 +49,15 @@ namespace MCU_Hub
 
         public override string ToString()
         {
-            return Title;
+            return Title + "\t|\t" + Phase;
         }
 
-        public int CompareTo(object obj)
-        {
-            Project otherProject = obj as Project;
+        //public int CompareTo(object obj)
+        //{
+        //    Project otherProject = obj as Project;
 
-            return this.ReleaseDate.CompareTo(otherProject.ReleaseDate);
-        }
+        //    return this.ReleaseDate.CompareTo(otherProject.ReleaseDate);
+        //}
 
         #endregion
     }
