@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCU_Hub"
         mc:Ignorable="d"
-        Title="MCU HUB" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="MarvelIcon.png" ResizeMode="CanResizeWithGrip">
+        Title="MCU HUB" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="MarvelIcon.png" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
     <Grid>
         <Label x:Name="lblTitle" Content="MCU HUB" HorizontalAlignment="Left" Margin="306,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
         <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
