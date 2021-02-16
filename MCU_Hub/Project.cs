@@ -16,7 +16,7 @@ namespace MCU_Hub
 
         public DateTime ReleaseDate { get; set; }
 
-        public byte Duration { get; set; }
+        public int Duration { get; set; }
 
         public string Rating { get; set; }
 
@@ -28,7 +28,7 @@ namespace MCU_Hub
 
         #region Constructors
 
-        public Project(string title, DateTime releaseDate, byte duration, string rating, string cast, PhaseType phase)
+        public Project(string title, DateTime releaseDate, int duration, string rating, string cast, PhaseType phase)
         {
             Title = title;
             ReleaseDate = releaseDate;
@@ -38,7 +38,7 @@ namespace MCU_Hub
             Phase = phase;
         }
 
-        public Project(string title, DateTime releaseDate, byte duration) : 
+        public Project(string title, DateTime releaseDate, int duration) : 
             this(title, releaseDate, duration, "0", "Unknown", PhaseType.Zero) { }
 
         public Project() : this("Unknown", new DateTime(2000, 1, 1), 0) { }
@@ -49,7 +49,7 @@ namespace MCU_Hub
 
         public override string ToString()
         {
-            return Title + "\t|\t" + Phase;
+            return Title + " | Phase " + Phase;
         }
 
         //public int CompareTo(object obj)

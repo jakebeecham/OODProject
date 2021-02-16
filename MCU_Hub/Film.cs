@@ -16,13 +16,13 @@ namespace MCU_Hub
 
         #region Constructors
 
-        public Film(string title, DateTime releaseDate, byte duration, string rating, string director, string cast, PhaseType phase) :
+        public Film(string title, DateTime releaseDate, int duration, string rating, string director, string cast, PhaseType phase) :
             base(title, releaseDate, duration, rating, cast, phase)
         {
             Director = director;
         }
 
-        public Film(string title, DateTime releaseDate, byte duration) :
+        public Film(string title, DateTime releaseDate, int duration) :
             this(title, releaseDate, duration, "0", "Unknown", "Unknown", PhaseType.Zero) { }
 
         public Film() : this("Unknown", new DateTime(2000, 1, 1), 0) { }
@@ -33,7 +33,7 @@ namespace MCU_Hub
 
         public override string ToString()
         {
-            return base.ToString() + "\t|\tFilm";
+            return base.ToString() + " | Film";
         }
 
         #endregion

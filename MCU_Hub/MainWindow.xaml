@@ -10,9 +10,9 @@
         <Label x:Name="lblTitle" Content="MCU HUB" HorizontalAlignment="Left" Margin="306,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
         <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
         <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="154,70,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14" Height="28"/>
-        <ListBox HorizontalAlignment="Left" Height="273" Margin="40,103,0,0" VerticalAlignment="Top" Width="234"/>
+        <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="273" Margin="40,103,0,0" VerticalAlignment="Top" Width="234"/>
         <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Left" Margin="480,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-        <ListBox HorizontalAlignment="Left" Height="273" Margin="344,103,0,0" VerticalAlignment="Top" Width="408"/>
+        <ListBox x:Name="lbxDescription" HorizontalAlignment="Left" Height="273" Margin="344,103,0,0" VerticalAlignment="Top" Width="408"/>
         <Button x:Name="btnCreateList" Content="New List" HorizontalAlignment="Left" Margin="652,28,0,0" VerticalAlignment="Top" Width="100" FontFamily="Arial" FontSize="14" Height="30"/>
 
     </Grid>
