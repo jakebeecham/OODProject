@@ -5,15 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCU_Hub"
         mc:Ignorable="d"
-        Title="MCU HUB" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="MarvelIcon.png" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
-    <Grid>
-        <Label x:Name="lblTitle" Content="MCU HUB" HorizontalAlignment="Left" Margin="306,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-        <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="154,70,0,0" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14" Height="28"/>
-        <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="273" Margin="40,103,0,0" VerticalAlignment="Top" Width="234"/>
-        <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Left" Margin="480,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-        <ListBox x:Name="lbxDescription" HorizontalAlignment="Left" Height="273" Margin="344,103,0,0" VerticalAlignment="Top" Width="408"/>
-        <Button x:Name="btnCreateList" Content="New List" HorizontalAlignment="Left" Margin="652,28,0,0" VerticalAlignment="Top" Width="100" FontFamily="Arial" FontSize="14" Height="30"/>
+        Title="MCU HUB" Height="700" Width="1400" WindowStartupLocation="CenterScreen" Icon="MarvelIcon.png" ResizeMode="NoResize" Loaded="Window_Loaded">
 
-    </Grid>
+    <TabControl TabStripPlacement="Top">
+
+        <TabItem Name="Home" Header="Home" Width="100">
+
+            <Grid>
+                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
+                <Button x:Name="btnCreateList" Content="New List" HorizontalAlignment="Left" Margin="652,28,0,0" VerticalAlignment="Top" Width="100" FontFamily="Arial" FontSize="14" Height="30"/>
+            </Grid>
+            
+        </TabItem>
+
+        <TabItem Name="Projects" Header="Projects" Width="100">
+
+            <Grid>
+                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
+                <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="50,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
+                <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="175,70,0,0" VerticalAlignment="Top" Width="175" FontFamily="Arial" FontSize="14" Height="30"/>
+                <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="410" Margin="50,110,0,0" VerticalAlignment="Top" Width="300"/>
+                <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,439,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
+                <ListBox x:Name="lbxDescription" HorizontalAlignment="Right" Height="410" Margin="0,110,50,0" VerticalAlignment="Top" Width="550"/>
+            </Grid>
+            
+        </TabItem>
+
+    </TabControl>
 </Window>
