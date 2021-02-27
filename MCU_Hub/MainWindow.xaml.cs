@@ -128,6 +128,18 @@ namespace MCU_Hub
             //Display in Listbox
             lbxProjects.ItemsSource = allProjects;
         }
+
+        //Open Project Tab
+        private void btnOpenProjects_Click(object sender, RoutedEventArgs e)
+        {
+            Projects.IsSelected = true;
+        }
+
+        //Exit Application
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
         #endregion
     }
 }
