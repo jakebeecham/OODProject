@@ -93,7 +93,7 @@ namespace MCU_Hub
                 "Anthony Mackie, Sebastian Stan, Daniel Bruhl, Emily VanCamp, Wyatt Russell", Project.PhaseType.Four);
             Film film23 = new Film("Black Widow", new DateTime(2021, 5, 7), 133, "12+", "Cate Shortland",
                 "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle", Project.PhaseType.Four);
-            Show show3 = new Show("Loki", new DateTime(2021, 5, 28), 360, 9, "9+", "Michael Waldron",
+            Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 9, "9+", "Michael Waldron",
                 "Tom Hiddleston, Owen Wilson", Project.PhaseType.Four);
             #endregion
             //Adding All Projects to Collection
@@ -169,6 +169,7 @@ namespace MCU_Hub
         private void btnOpenProjects_Click(object sender, RoutedEventArgs e)
         {
             Projects.IsSelected = true;
+            Reset();
         }
 
         //Open Custom List Tab
@@ -200,11 +201,13 @@ namespace MCU_Hub
                 case "Release Order":
                     lbxProjects.ItemsSource = null;
                     lbxProjects.ItemsSource = allProjects;
+                    Reset();
                     break;
 
                 case "Chronological Order":
                     lbxProjects.ItemsSource = null;
                     lbxProjects.ItemsSource = chronologicalOrder;
+                    Reset();
                     break;
 
                 case "Phase One":
@@ -214,6 +217,7 @@ namespace MCU_Hub
                             filteredProjects.Add(project);
                     }
                     lbxProjects.ItemsSource = filteredProjects;
+                    Reset();
                     break;
 
                 case "Phase Two":
@@ -223,6 +227,7 @@ namespace MCU_Hub
                             filteredProjects.Add(project);
                     }
                     lbxProjects.ItemsSource = filteredProjects;
+                    Reset();
                     break;
 
                 case "Phase Three":
@@ -232,6 +237,7 @@ namespace MCU_Hub
                             filteredProjects.Add(project);
                     }
                     lbxProjects.ItemsSource = filteredProjects;
+                    Reset();
                     break;
 
                 case "Phase Four":
@@ -241,9 +247,50 @@ namespace MCU_Hub
                             filteredProjects.Add(project);
                     }
                     lbxProjects.ItemsSource = filteredProjects;
+                    Reset();
                     break;
             }
         }
         #endregion
+
+        #region Projects_Selection
+        private void lbxProjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Project selectedProject = lbxProjects.SelectedItem as Project;
+
+            if (selectedProject != null)
+            {
+                if(selectedProject is Film)
+                {
+                    Film tempFilm = selectedProject as Film;
+                    tblkDescription.Text = string.Format($"Title : {tempFilm.Title}" +
+                    $"\nRelease Date : {tempFilm.ReleaseDate.Date.ToString("d")}" +
+                    $"\nDuration : {tempFilm.Duration} minutes" +
+                    $"\nRating : {tempFilm.Rating}" +
+                    $"\nCast : {tempFilm.Cast}" +
+                    $"\nDirector : {tempFilm.Director}" +
+                    $"\nPhase : Phase {tempFilm.Phase}");
+                }
+                if(selectedProject is Show)
+                {
+                    Show tempShow = selectedProject as Show;
+                    tblkDescription.Text = string.Format($"Title : {tempShow.Title}" +
+                    $"\nRelease Date : {tempShow.ReleaseDate.Date.ToString("d")}" +
+                    $"\nDuration : {tempShow.Duration} minutes" +
+                    $"\nRating : {tempShow.Rating}" +
+                    $"\nCast : {tempShow.Cast}" +
+                    $"\nCreator : {tempShow.Creator}" +
+                    $"\nEpisodes : {tempShow.NumberOfEpisodes} Episodes" +
+                    $"\nPhase : Phase {tempShow.Phase}");
+                }
+            }
+        }
+        #endregion
+
+        private void Reset()
+        {
+            lbxProjects.SelectedItem = null;
+            tblkDescription.Text = "";
+        }
     }
 }
