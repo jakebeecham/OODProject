@@ -22,6 +22,7 @@ namespace MCU_Hub
     {
         #region Setup
         List<Project> allProjects = new List<Project>();
+        List<Project> chronologicalOrder = new List<Project>();
 
         public MainWindow()
         {
@@ -96,49 +97,152 @@ namespace MCU_Hub
                 "Tom Hiddleston, Owen Wilson", Project.PhaseType.Four);
             #endregion
             //Adding All Projects to Collection
-            #region Adding To Collection
+            #region Adding To Collections
+            #region AllProjects
+            allProjects.Add(film4);
+            allProjects.Add(film20);
             allProjects.Add(film1);
             allProjects.Add(film2);
             allProjects.Add(film3);
-            allProjects.Add(film4);
             allProjects.Add(film5);
             allProjects.Add(film6);
             allProjects.Add(film7);
             allProjects.Add(film8);
             allProjects.Add(film9);
+            allProjects.Add(film14);
             allProjects.Add(film10);
             allProjects.Add(film11);
             allProjects.Add(film12);
-            allProjects.Add(film13);
-            allProjects.Add(film14);
             allProjects.Add(film15);
-            allProjects.Add(film16);
+            allProjects.Add(film13);
             allProjects.Add(film17);
-            allProjects.Add(film18);
+            allProjects.Add(film16);
             allProjects.Add(film19);
-            allProjects.Add(film20);
-            allProjects.Add(film21);
-            allProjects.Add(film22);
-            allProjects.Add(show1);
-            allProjects.Add(show2);
             allProjects.Add(film23);
+            allProjects.Add(film18);
+            allProjects.Add(film21);
+            allProjects.Add(show1);
+            allProjects.Add(film22);
+            allProjects.Add(show2);
             allProjects.Add(show3);
             #endregion
+            #region Chronological
+            chronologicalOrder.Add(film4);
+            chronologicalOrder.Add(film20);
+            chronologicalOrder.Add(film1);
+            chronologicalOrder.Add(film2);
+            chronologicalOrder.Add(film3);
+            chronologicalOrder.Add(film5);
+            chronologicalOrder.Add(film6);
+            chronologicalOrder.Add(film7);
+            chronologicalOrder.Add(film8);
+            chronologicalOrder.Add(film9);
+            chronologicalOrder.Add(film14);
+            chronologicalOrder.Add(film10);
+            chronologicalOrder.Add(film11);
+            chronologicalOrder.Add(film12);
+            chronologicalOrder.Add(film15);
+            chronologicalOrder.Add(film13);
+            chronologicalOrder.Add(film17);
+            chronologicalOrder.Add(film16);
+            chronologicalOrder.Add(film19);
+            chronologicalOrder.Add(film23);
+            chronologicalOrder.Add(film18);
+            chronologicalOrder.Add(film21);
+            chronologicalOrder.Add(show1);
+            chronologicalOrder.Add(film22);
+            chronologicalOrder.Add(show2);
+            chronologicalOrder.Add(show3);
+            #endregion
+            #endregion
+
+            //Sorting in Release Order
+            allProjects.Sort();
 
             //Display in Listbox
             lbxProjects.ItemsSource = allProjects;
         }
+        #endregion
 
+        #region Home Page Interactions
         //Open Project Tab
         private void btnOpenProjects_Click(object sender, RoutedEventArgs e)
         {
             Projects.IsSelected = true;
         }
 
+        //Open Custom List Tab
+        private void btnCreateList_Click(object sender, RoutedEventArgs e)
+        {
+            CustomList.IsSelected = true;
+        }
+
         //Exit Application
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+        #endregion
+
+        #region Projects_Filtering
+        //Filter Based on Combo Box
+        private void cbBoxFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Determine what is selected
+            string selectedFilter = cbBoxFilter.SelectedItem as string;
+
+            //Setup Filter List
+            List<Project> filteredProjects = new List<Project>();
+
+            //Check
+            switch (selectedFilter)
+            {
+                case "Release Order":
+                    lbxProjects.ItemsSource = null;
+                    lbxProjects.ItemsSource = allProjects;
+                    break;
+
+                case "Chronological Order":
+                    lbxProjects.ItemsSource = null;
+                    lbxProjects.ItemsSource = chronologicalOrder;
+                    break;
+
+                case "Phase One":
+                    foreach (Project project in allProjects)
+                    {
+                        if (project.Phase is Project.PhaseType.One)
+                            filteredProjects.Add(project);
+                    }
+                    lbxProjects.ItemsSource = filteredProjects;
+                    break;
+
+                case "Phase Two":
+                    foreach (Project project in allProjects)
+                    {
+                        if (project.Phase is Project.PhaseType.Two)
+                            filteredProjects.Add(project);
+                    }
+                    lbxProjects.ItemsSource = filteredProjects;
+                    break;
+
+                case "Phase Three":
+                    foreach (Project project in allProjects)
+                    {
+                        if (project.Phase is Project.PhaseType.Three)
+                            filteredProjects.Add(project);
+                    }
+                    lbxProjects.ItemsSource = filteredProjects;
+                    break;
+
+                case "Phase Four":
+                    foreach (Project project in allProjects)
+                    {
+                        if (project.Phase is Project.PhaseType.Four)
+                            filteredProjects.Add(project);
+                    }
+                    lbxProjects.ItemsSource = filteredProjects;
+                    break;
+            }
         }
         #endregion
     }

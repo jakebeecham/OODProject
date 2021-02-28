@@ -12,9 +12,9 @@
         <TabItem Name="Home" Header="Home" Width="100">
 
             <Grid>
-                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
+                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
                 <Button x:Name="btnOpenProjects" Content="Projects" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnOpenProjects_Click"/>
-                <Button x:Name="btnCreateList" Content="New List" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50"/>
+                <Button x:Name="btnCreateList" Content="Custom List" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnCreateList_Click"/>
                 <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnExit_Click"/>
             </Grid>
 
@@ -25,10 +25,19 @@
             <Grid>
                 <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
                 <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="50,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
-                <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="228,70,0,0" VerticalAlignment="Top" Width="175" FontFamily="Arial" FontSize="16" Height="38" VerticalContentAlignment="Center"/>
+                <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="228,70,0,0" VerticalAlignment="Top" Width="175" FontFamily="Arial" FontSize="16" Height="38" VerticalContentAlignment="Center" SelectionChanged="cbBoxFilter_SelectionChanged"/>
                 <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="480" Margin="50,120,0,0" VerticalAlignment="Top" Width="400" FontSize="14"/>
                 <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,350,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
                 <ListBox x:Name="lbxDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" VerticalAlignment="Top" Width="800"/>
+            </Grid>
+
+        </TabItem>
+
+        <TabItem Name="CustomList" Header="Custom List" Width="100">
+
+            <Grid>
+                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
+                <Label Content="Create A Custom List" HorizontalAlignment="Left" Margin="50,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
             </Grid>
 
         </TabItem>
