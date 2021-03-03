@@ -28,7 +28,8 @@
                 <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="228,70,0,0" VerticalAlignment="Top" Width="175" FontFamily="Arial" FontSize="16" Height="38" VerticalContentAlignment="Center" SelectionChanged="cbBoxFilter_SelectionChanged"/>
                 <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="480" Margin="50,120,0,0" VerticalAlignment="Top" Width="400" FontSize="14" SelectionChanged="lbxProjects_SelectionChanged"/>
                 <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,350,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
-                <TextBlock x:Name="tblkDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="800" FontSize="18" Padding="50,50,0,1"/>
+                <TextBlock x:Name="tblkDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="18" Padding="50,100,0,1" Text="Select a Project to View Description!"/>
+                <Image x:Name="imgProject" HorizontalAlignment="Left" Height="480" Margin="530,120,0,0" VerticalAlignment="Top" Width="400" Source="Images/MarvelStudios.png"/>
             </Grid>
 
         </TabItem>

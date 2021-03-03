@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MCU_Hub.Classes;
 
 namespace MCU_Hub
 {
@@ -23,6 +24,7 @@ namespace MCU_Hub
         #region Setup
         List<Project> allProjects = new List<Project>();
         List<Project> chronologicalOrder = new List<Project>();
+        Dictionary<string, Project> projectDictionary = new Dictionary<string, Project>();
 
         public MainWindow()
         {
@@ -154,6 +156,35 @@ namespace MCU_Hub
             chronologicalOrder.Add(show2);
             chronologicalOrder.Add(show3);
             #endregion
+            #region Dictionary
+            //Add to Dictionary - To Control Images
+            projectDictionary.Add("film1", film1);
+            projectDictionary.Add("film2", film2);
+            projectDictionary.Add("film3", film3);
+            projectDictionary.Add("film4", film4);
+            projectDictionary.Add("film5", film5);
+            projectDictionary.Add("film6", film6);
+            projectDictionary.Add("film7", film7);
+            projectDictionary.Add("film8", film8);
+            projectDictionary.Add("film9", film9);
+            projectDictionary.Add("film10", film10);
+            projectDictionary.Add("film11", film11);
+            projectDictionary.Add("film12", film12);
+            projectDictionary.Add("film13", film13);
+            projectDictionary.Add("film14", film14);
+            projectDictionary.Add("film15", film15);
+            projectDictionary.Add("film16", film16);
+            projectDictionary.Add("film17", film17);
+            projectDictionary.Add("film18", film18);
+            projectDictionary.Add("film19", film19);
+            projectDictionary.Add("film20", film20);
+            projectDictionary.Add("film21", film21);
+            projectDictionary.Add("film22", film22);
+            projectDictionary.Add("film23", film23);
+            projectDictionary.Add("show1", show1);
+            projectDictionary.Add("show2", show2);
+            projectDictionary.Add("show3", show3);
+            #endregion
             #endregion
 
             //Sorting in Release Order
@@ -260,6 +291,15 @@ namespace MCU_Hub
 
             if (selectedProject != null)
             {
+                //for (int i = 0; i < projectDictionary.Count - 3; i++)
+                //{
+                //    if (selectedProject == projectDictionary["film" + (i + 1)])
+                //    {
+                //        //if (i + 1 == 1)
+                //        //    imgProject.Source;
+                //    }
+                //}
+
                 if(selectedProject is Film)
                 {
                     Film tempFilm = selectedProject as Film;
@@ -290,7 +330,7 @@ namespace MCU_Hub
         private void Reset()
         {
             lbxProjects.SelectedItem = null;
-            tblkDescription.Text = "";
+            tblkDescription.Text = "Select a Project to View Description!";
         }
     }
 }

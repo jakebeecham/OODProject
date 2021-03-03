@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Show.cs" />
+    <Compile Include="Classes\Show.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,14 +64,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Film.cs" />
+    <Compile Include="Classes\Film.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Project.cs" />
+    <Compile Include="Classes\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +99,35 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MarvelIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\film1.jpg" />
+    <Resource Include="Images\film10.jpg" />
+    <Resource Include="Images\film11.jpg" />
+    <Resource Include="Images\film12.jpg" />
+    <Resource Include="Images\film13.jpg" />
+    <Resource Include="Images\film14.jpg" />
+    <Resource Include="Images\film15.jpg" />
+    <Resource Include="Images\film16.jpg" />
+    <Resource Include="Images\film17.jpg" />
+    <Resource Include="Images\film18.jpg" />
+    <Resource Include="Images\film19.jpg" />
+    <Resource Include="Images\film2.jpg" />
+    <Resource Include="Images\film20.jpg" />
+    <Resource Include="Images\film21.jpg" />
+    <Resource Include="Images\film22.jpg" />
+    <Resource Include="Images\film23.jpg" />
+    <Resource Include="Images\film3.jpg" />
+    <Resource Include="Images\film4.jpg" />
+    <Resource Include="Images\film5.jpg" />
+    <Resource Include="Images\film6.jpg" />
+    <Resource Include="Images\film7.jpg" />
+    <Resource Include="Images\film8.jpg" />
+    <Resource Include="Images\film9.jpg" />
+    <Resource Include="Images\MarvelStudios.png" />
+    <Resource Include="Images\show1.jpg" />
+    <Resource Include="Images\show2.jpg" />
+    <Resource Include="Images\show3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
