@@ -98,7 +98,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MarvelIcon.png" />
+    <Resource Include="Images\MarvelIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\film1.jpg" />

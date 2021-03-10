@@ -90,9 +90,9 @@ namespace MCU_Hub
             //Phase Four
             Show show1 = new Show("WandaVision", new DateTime(2021, 1, 15), 360, 9, "9+", "Jac Schaeffer, Matt Shakman",
                 "Elizabeth Olsen, Paul Bettany, Teyonah Paris, Kathryn Hahn, Randall Park, Kat Dennings", Project.PhaseType.Four);
-            //Unreleased
-            Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 9, "9+", "Malcolm Spellman",
+            Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 6, "9+", "Malcolm Spellman, Kari Skogland",
                 "Anthony Mackie, Sebastian Stan, Daniel Bruhl, Emily VanCamp, Wyatt Russell", Project.PhaseType.Four);
+            //Unreleased
             Film film23 = new Film("Black Widow", new DateTime(2021, 5, 7), 133, "12+", "Cate Shortland",
                 "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle", Project.PhaseType.Four);
             Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 9, "9+", "Michael Waldron",
@@ -290,18 +290,10 @@ namespace MCU_Hub
             Project selectedProject = lbxProjects.SelectedItem as Project;
 
             if (selectedProject != null)
-            {
-                //for (int i = 0; i < projectDictionary.Count - 3; i++)
-                //{
-                //    if (selectedProject == projectDictionary["film" + (i + 1)])
-                //    {
-                //        //if (i + 1 == 1)
-                //        //    imgProject.Source;
-                //    }
-                //}
-
-                if(selectedProject is Film)
+            {   
+                if (selectedProject is Film)
                 {
+                    SetFilmImages(selectedProject);
                     Film tempFilm = selectedProject as Film;
                     tblkDescription.Text = string.Format($"Title : {tempFilm.Title}" +
                     $"\nRelease Date : {tempFilm.ReleaseDate.Date.ToString("d")}" +
@@ -313,15 +305,88 @@ namespace MCU_Hub
                 }
                 if(selectedProject is Show)
                 {
+                    SetShowImages(selectedProject);
                     Show tempShow = selectedProject as Show;
                     tblkDescription.Text = string.Format($"Title : {tempShow.Title}" +
                     $"\nRelease Date : {tempShow.ReleaseDate.Date.ToString("d")}" +
                     $"\nDuration : {tempShow.Duration} minutes" +
                     $"\nRating : {tempShow.Rating}" +
                     $"\nCast : {tempShow.Cast}" +
-                    $"\nCreator : {tempShow.Creator}" +
+                    $"\nCreator(s) : {tempShow.Creator}" +
                     $"\nEpisodes : {tempShow.NumberOfEpisodes} Episodes" +
                     $"\nPhase : Phase {tempShow.Phase}");
+                }
+            }
+        }
+
+        private void SetFilmImages(Project selectedProject)
+        {
+            for (int i = 0; i < projectDictionary.Count - 3; i++)
+            {
+                if (selectedProject == projectDictionary["film" + (i + 1)])
+                {
+                    if (i + 1 == 1)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film1.jpg", UriKind.Relative));
+                    if (i + 1 == 2)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film2.jpg", UriKind.Relative));
+                    if (i + 1 == 3)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film3.jpg", UriKind.Relative));
+                    if (i + 1 == 4)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film4.jpg", UriKind.Relative));
+                    if (i + 1 == 5)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film5.jpg", UriKind.Relative));
+                    if (i + 1 == 6)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film6.jpg", UriKind.Relative));
+                    if (i + 1 == 7)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film7.jpg", UriKind.Relative));
+                    if (i + 1 == 8)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film8.jpg", UriKind.Relative));
+                    if (i + 1 == 9)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film9.jpg", UriKind.Relative));
+                    if (i + 1 == 10)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film10.jpg", UriKind.Relative));
+                    if (i + 1 == 11)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film11.jpg", UriKind.Relative));
+                    if (i + 1 == 12)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film12.jpg", UriKind.Relative));
+                    if (i + 1 == 13)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film13.jpg", UriKind.Relative));
+                    if (i + 1 == 14)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film14.jpg", UriKind.Relative));
+                    if (i + 1 == 15)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film15.jpg", UriKind.Relative));
+                    if (i + 1 == 16)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film16.jpg", UriKind.Relative));
+                    if (i + 1 == 17)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film17.jpg", UriKind.Relative));
+                    if (i + 1 == 18)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film18.jpg", UriKind.Relative));
+                    if (i + 1 == 19)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film19.jpg", UriKind.Relative));
+                    if (i + 1 == 20)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film20.jpg", UriKind.Relative));
+                    if (i + 1 == 21)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film21.jpg", UriKind.Relative));
+                    if (i + 1 == 22)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film22.jpg", UriKind.Relative));
+                    if (i + 1 == 23)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film23.jpg", UriKind.Relative));
+                }
+            }
+        }
+
+        private void SetShowImages(Project selectedProject)
+        {
+            for (int i = 0; i < projectDictionary.Count - 23; i++)
+            {
+                if (selectedProject == projectDictionary["show" + (i + 1)])
+                {
+                    if (i + 1 == 1)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show1.jpg", UriKind.Relative));
+                    if (i + 1 == 2)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show2.jpg", UriKind.Relative));
+                    if (i + 1 == 3)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show3.jpg", UriKind.Relative));
                 }
             }
         }
@@ -330,6 +395,7 @@ namespace MCU_Hub
         private void Reset()
         {
             lbxProjects.SelectedItem = null;
+            imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
             tblkDescription.Text = "Select a Project to View Description!";
         }
     }
