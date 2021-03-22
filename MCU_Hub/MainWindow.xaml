@@ -9,43 +9,49 @@
 
     <TabControl TabStripPlacement="Top">
 
-        <TabItem Name="Home" Header="Home" Width="460" Height="35" FontSize="20">
+        <TabItem Name="Home" Header="Home">
 
             <Grid>
                 <Grid.Background>
-                    <ImageBrush AlignmentY="Top" AlignmentX="Center" ImageSource="Images/MarvelBackground.jpg" Stretch="UniformToFill" Opacity="0.85"/>
+                    <ImageBrush AlignmentY="Top" AlignmentX="Center" ImageSource="Images/MarvelBackground.jpg" Stretch="UniformToFill" Opacity="0.9"/>
                 </Grid.Background>
-                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="60" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
-                <Button x:Name="btnOpenProjects" Content="Projects" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnOpenProjects_Click"/>
-                <Button x:Name="btnCreateList" Content="Custom List" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnCreateList_Click"/>
-                <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="24" Height="50" Click="btnExit_Click"/>
+                <Label Content="MCU HUB" Margin="0,10,0,0" FontSize="60" RenderTransformOrigin="0.5,0.5"/>
+                <Button x:Name="btnOpenProjects" Content="Projects" HorizontalAlignment="Left" Margin="100,520,0,0" Click="btnOpenProjects_Click"/>
+                <Button x:Name="btnCreateList" Content="Custom List" Margin="0,520,0,0" Click="btnCreateList_Click"/>
+                <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Right" Margin="0,520,100,0" Click="btnExit_Click"/>
             </Grid>
 
         </TabItem>
 
-        <TabItem Name="Projects" Header="Projects" Width="460" Height="35" FontSize="20">
+        <TabItem Name="Projects" Header="Projects">
 
             <Grid>
-                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
-                <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="50,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
-                <ComboBox x:Name="cbBoxFilter" HorizontalAlignment="Left" Margin="228,70,0,0" VerticalAlignment="Top" Width="175" FontFamily="Arial" FontSize="16" Height="38" VerticalContentAlignment="Center" SelectionChanged="cbBoxFilter_SelectionChanged"/>
+                <Grid.Background>
+                    <SolidColorBrush Color="DarkRed" Opacity="0.9"/>
+                </Grid.Background>
+                <Label Content="MCU HUB" Margin="0,10,0,0" FontSize="40" RenderTransformOrigin="0.5,0.5"/>
+                <Label x:Name="lblMainLstTitle" Content="MCU Projects" HorizontalAlignment="Left" Margin="50,70,0,0"/>
+                <ComboBox x:Name="cbBoxFilter" Margin="228,70,0,0" Width="175" Height="38" SelectionChanged="cbBoxFilter_SelectionChanged"/>
                 <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="480" Margin="50,120,0,0" VerticalAlignment="Top" Width="400" FontSize="14" SelectionChanged="lbxProjects_SelectionChanged"/>
-                <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,350,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
+                <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,350,0"/>
                 <TextBlock x:Name="tblkDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="18" Padding="50,100,0,1" Text="Select a Project to View Description!"/>
-                <Image x:Name="imgProject" HorizontalAlignment="Left" Height="480" Margin="530,120,0,0" VerticalAlignment="Top" Width="400" Source="Images/MarvelStudios.png"/>
+                <Image x:Name="imgProject" Height="480" Margin="530,120,0,0" Width="400" Source="Images/MarvelStudios.png"/>
             </Grid>
 
         </TabItem>
 
-        <TabItem Name="CustomList" Header="Custom List" Width="460" Height="35" FontSize="20">
+        <TabItem Name="CustomList" Header="Custom List">
 
             <Grid>
-                <Label Content="MCU HUB" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
-                <Label Content="Create A Custom List" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="24"/>
+                <Grid.Background>
+                    <SolidColorBrush Color="DarkRed" Opacity="0.9"/>
+                </Grid.Background>
+                <Label Content="MCU HUB" Margin="0,10,0,0" FontSize="40" RenderTransformOrigin="0.5,0.5"/>
+                <Label Content="Create A Custom List" Margin="0,70,0,0"/>
                 <ListBox x:Name="lbxCreateList" HorizontalAlignment="Center" Height="480" Margin="0,120,0,0" VerticalAlignment="Top" Width="400"/>
                 <TextBlock x:Name="tblkCreateInstruction" Text="Click A Dropdown List To Select An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,287,0,0" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Width="400"/>
-                <Button x:Name="btnSave" Content="Save List" HorizontalAlignment="Right" Margin="0,257,50,0" VerticalAlignment="Top" Width="350" Height="40"/>
-                <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Right" Margin="0,317,50,0" VerticalAlignment="Top" Width="350" Height="40"/>
+                <Button x:Name="btnSave" Content="Save List" HorizontalAlignment="Right" Margin="0,257,50,0" Width="350" Height="40"/>
+                <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Right" Margin="0,317,50,0" Width="350" Height="40"/>
             </Grid>
 
         </TabItem>

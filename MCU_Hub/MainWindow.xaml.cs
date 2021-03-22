@@ -88,14 +88,14 @@ namespace MCU_Hub
             Film film22 = new Film("Spider-Man: Far From Home", new DateTime(2019, 7, 2), 129, "12+", "Jon Watts",
                 "Tom Holland, Jake Gyllenhaal, Samuel L. Jackson, Zendaya, Cobie Smulders, Jon Favreau", Project.PhaseType.Three);
             //Phase Four
-            Show show1 = new Show("WandaVision", new DateTime(2021, 1, 15), 360, 9, "9+", "Jac Schaeffer, Matt Shakman",
+            Show show1 = new Show("WandaVision", new DateTime(2021, 1, 15), 360, 9, "12+", "Matt Shakman, Jac Schaeffer",
                 "Elizabeth Olsen, Paul Bettany, Teyonah Paris, Kathryn Hahn, Randall Park, Kat Dennings", Project.PhaseType.Four);
-            Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 6, "9+", "Malcolm Spellman, Kari Skogland",
+            Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 6, "12+", "Kari Skogland, Malcolm Spellman",
                 "Anthony Mackie, Sebastian Stan, Daniel Bruhl, Emily VanCamp, Wyatt Russell", Project.PhaseType.Four);
             //Unreleased
             Film film23 = new Film("Black Widow", new DateTime(2021, 5, 7), 133, "12+", "Cate Shortland",
                 "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle", Project.PhaseType.Four);
-            Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 9, "9+", "Michael Waldron",
+            Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 6, "12+", "Kate Herron, Michael Waldron",
                 "Tom Hiddleston, Owen Wilson", Project.PhaseType.Four);
             #endregion
             //Adding All Projects to Collection
