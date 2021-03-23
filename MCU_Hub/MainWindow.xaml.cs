@@ -24,6 +24,9 @@ namespace MCU_Hub
         #region Setup
         List<Project> allProjects = new List<Project>();
         List<Project> chronologicalOrder = new List<Project>();
+        List<ComboBox> customListCBBoxes = new List<ComboBox>();
+        List<Project> myCustomList = new List<Project>();
+        string message;
         Dictionary<string, Project> projectDictionary = new Dictionary<string, Project>();
 
         public MainWindow()
@@ -33,6 +36,7 @@ namespace MCU_Hub
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            #region Project Window
             //Populate Combo Box
             string[] filterTypes = { "Release Order", "Chronological Order", "Phase One", "Phase Two", "Phase Three", "Phase Four" };
             cbBoxFilter.ItemsSource = filterTypes;
@@ -93,10 +97,10 @@ namespace MCU_Hub
             Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 6, "12+", "Kari Skogland, Malcolm Spellman",
                 "Anthony Mackie, Sebastian Stan, Daniel Bruhl, Emily VanCamp, Wyatt Russell", Project.PhaseType.Four);
             //Unreleased
-            Film film23 = new Film("Black Widow", new DateTime(2021, 5, 7), 133, "12+", "Cate Shortland",
-                "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle", Project.PhaseType.Four);
             Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 6, "12+", "Kate Herron, Michael Waldron",
                 "Tom Hiddleston, Owen Wilson", Project.PhaseType.Four);
+            Film film23 = new Film("Black Widow", new DateTime(2021, 7, 9), 133, "12+", "Cate Shortland",
+                "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle", Project.PhaseType.Four);
             #endregion
             //Adding All Projects to Collection
             #region Adding To Collections
@@ -192,6 +196,25 @@ namespace MCU_Hub
 
             //Display in Listbox
             lbxProjects.ItemsSource = allProjects;
+            #endregion
+
+            #region CustomList Window
+            #region Adding to CB List
+            customListCBBoxes.Add(cbBoxCustomNum1);
+            customListCBBoxes.Add(cbBoxCustomNum2);
+            customListCBBoxes.Add(cbBoxCustomNum3);
+            customListCBBoxes.Add(cbBoxCustomNum4);
+            customListCBBoxes.Add(cbBoxCustomNum5);
+            customListCBBoxes.Add(cbBoxCustomNum6);
+            customListCBBoxes.Add(cbBoxCustomNum7);
+            customListCBBoxes.Add(cbBoxCustomNum8);
+            customListCBBoxes.Add(cbBoxCustomNum9);
+            customListCBBoxes.Add(cbBoxCustomNum10);
+            #endregion
+            foreach (ComboBox comboBox in customListCBBoxes)
+                comboBox.ItemsSource = allProjects;
+            message = "Here is your List :\n";
+            #endregion
         }
         #endregion
 
@@ -389,6 +412,38 @@ namespace MCU_Hub
                         imgProject.Source = new BitmapImage(new Uri(@"/Images/show3.jpg", UriKind.Relative));
                 }
             }
+        }
+        #endregion
+
+        #region CustomList_Save
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ComboBox comboBox in customListCBBoxes)
+            {
+                if (comboBox.SelectedItem != null && comboBox.SelectedItem is Project)
+                    myCustomList.Add(comboBox.SelectedItem as Project);
+            }
+
+            foreach (Project item in myCustomList)
+            {
+                message += item.Title.ToString() + ",\n";
+            }
+
+            if (message != "Here is your List :\n")
+                MessageBox.Show(message);
+            else
+                MessageBox.Show("You Must Make a List to Save!");
+        }
+        #endregion
+
+        #region CustomList_Clear
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ComboBox comboBox in customListCBBoxes)
+                comboBox.SelectedItem = null;
+
+            myCustomList.Clear();
+            message = "Here is your List :\n";
         }
         #endregion
 
