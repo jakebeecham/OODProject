@@ -49,6 +49,7 @@
                 </Grid.Background>
                 <Label Content="MCU HUB" Margin="0,10,0,0" FontSize="40" RenderTransformOrigin="0.5,0.5"/>
                 <Label Content="Create A Custom List" Margin="0,70,0,0"/>
+                <Label Content="List Name" HorizontalAlignment="Left" Margin="185,200,0,0"/>
                 <StackPanel x:Name="skplCreateList" HorizontalAlignment="Center" Height="480" Margin="0,120,0,0" VerticalAlignment="Top" Width="400" Background="White">
                     <ComboBox x:Name="cbBoxCustomNum1" Width="350" Height="40" Margin="40,20,0,0"/>
                     <ComboBox x:Name="cbBoxCustomNum2" Width="350" Height="40" Margin="40,5,0,0"/>
@@ -61,7 +62,8 @@
                     <ComboBox x:Name="cbBoxCustomNum9" Width="350" Height="40" Margin="40,5,0,0"/>
                     <ComboBox x:Name="cbBoxCustomNum10" Width="350" Height="40" Margin="40,5,0,0"/>
                 </StackPanel>
-                <TextBlock x:Name="tblkCreateInstruction" Text="Click A Dropdown List To Select An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,287,0,0" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="24" Width="400"/>
+                <TextBox x:Name="tbxListName" HorizontalAlignment="Left" Height="40" Margin="50,250,0,0" TextWrapping="Wrap" Text="Enter the Name of your New List Here..." VerticalAlignment="Top" Width="400" FontFamily="Arial" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GotFocus="tbxListName_GotFocus"/>
+                <TextBlock x:Name="tblkCreateInstruction" Text="Click A Dropdown List To Select An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="24" Width="400"/>
                 <Button x:Name="btnSave" Content="Save List" HorizontalAlignment="Right" Margin="0,257,50,0" Width="350" Height="40" Click="btnSave_Click"/>
                 <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Right" Margin="0,317,50,0" Width="350" Height="40" Click="btnClear_Click"/>
             </Grid>

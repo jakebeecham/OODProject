@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MCU_Hub.Classes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MCU_Hub
 {
@@ -26,7 +20,8 @@ namespace MCU_Hub
         List<Project> chronologicalOrder = new List<Project>();
         List<ComboBox> customListCBBoxes = new List<ComboBox>();
         List<Project> myCustomList = new List<Project>();
-        string message;
+        string listName;
+        string data;
         Dictionary<string, Project> projectDictionary = new Dictionary<string, Project>();
 
         public MainWindow()
@@ -213,7 +208,6 @@ namespace MCU_Hub
             #endregion
             foreach (ComboBox comboBox in customListCBBoxes)
                 comboBox.ItemsSource = allProjects;
-            message = "Here is your List :\n";
             #endregion
         }
         #endregion
@@ -239,6 +233,7 @@ namespace MCU_Hub
         }
         #endregion
 
+        #region Projects Page Interactions
         #region Projects_Filtering
         //Filter Based on Combo Box
         private void cbBoxFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -415,8 +410,57 @@ namespace MCU_Hub
         }
         #endregion
 
+        private void Reset()
+        {
+            lbxProjects.SelectedItem = null;
+            imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
+            tblkDescription.Text = "Select a Project to View Description!";
+        }
+        #endregion
+
+        #region CustomList Page Interactions
+        private void tbxListName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbxListName.Text = "";
+        }
+
         #region CustomList_Save
         private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if(tbxListName.Text != "" && 
+                tbxListName.Text != "Enter the Name of your New List Here...")
+            {
+                GetCustomListInfo();
+
+                if (myCustomList.Count > 0)
+                {
+                    data = JsonConvert.SerializeObject(myCustomList, Formatting.Indented);
+
+                    using (StreamWriter sw = new StreamWriter("../CustomLists/myCustomLists.json"))
+                    {
+                        sw.Write(listName + ":");
+                        sw.Write(data);
+                        sw.Close();
+                    }
+
+                    MessageBox.Show($"{listName} has been saved successfully!" +
+                        $"\nYour List can be found in the bin folder of the Project under CustomLists.", "Success!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("To Save a List you must Enter at least 1 Entry!");
+                    Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("To Save a List you must have a List Name!");
+                Clear();
+            }
+        }
+
+        private void GetCustomListInfo()
         {
             foreach (ComboBox comboBox in customListCBBoxes)
             {
@@ -424,34 +468,25 @@ namespace MCU_Hub
                     myCustomList.Add(comboBox.SelectedItem as Project);
             }
 
-            foreach (Project item in myCustomList)
-            {
-                message += item.Title.ToString() + ",\n";
-            }
-
-            if (message != "Here is your List :\n")
-                MessageBox.Show(message);
-            else
-                MessageBox.Show("You Must Make a List to Save!");
+            listName = tbxListName.Text;
         }
         #endregion
 
         #region CustomList_Clear
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            Clear();
+        }
+
+        private void Clear()
+        {
             foreach (ComboBox comboBox in customListCBBoxes)
                 comboBox.SelectedItem = null;
 
             myCustomList.Clear();
-            message = "Here is your List :\n";
+            tbxListName.Text = "Enter the Name of your New List Here...";
         }
         #endregion
-
-        private void Reset()
-        {
-            lbxProjects.SelectedItem = null;
-            imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
-            tblkDescription.Text = "Select a Project to View Description!";
-        }
+        #endregion
     }
 }
