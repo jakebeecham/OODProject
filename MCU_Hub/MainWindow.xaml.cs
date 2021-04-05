@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -421,7 +420,14 @@ namespace MCU_Hub
         #region CustomList Page Interactions
         private void tbxListName_GotFocus(object sender, RoutedEventArgs e)
         {
-            tbxListName.Text = "";
+            if(tbxListName.Text == "Enter the Name of your New List Here...")
+                tbxListName.Text = "";
+        }
+
+        private void tbxListName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbxListName.Text == "")
+                tbxListName.Text = "Enter the Name of your New List Here...";
         }
 
         #region CustomList_Save
@@ -448,16 +454,10 @@ namespace MCU_Hub
                     Clear();
                 }
                 else
-                {
                     MessageBox.Show("To Save a List you must Enter at least 1 Entry!");
-                    Clear();
-                }
             }
             else
-            {
                 MessageBox.Show("To Save a List you must have a List Name!");
-                Clear();
-            }
         }
 
         private void GetCustomListInfo()
