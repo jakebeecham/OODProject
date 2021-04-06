@@ -37,6 +37,7 @@
                 <TextBlock x:Name="tblkDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="18" Padding="50,100,0,1" Foreground="White" Text="Select a Project to View Description!"/>
                 <Rectangle Fill="White" HorizontalAlignment="Left" Height="505" Margin="478,106,0,0" VerticalAlignment="Top" Width="438"/>
                 <Image x:Name="imgProject" Height="480" Margin="530,120,0,0" Width="400" Source="Images/MarvelStudios.png"/>
+                <Button x:Name="btnProjectsExit" Content="Exit" Height="30" Width="150" HorizontalAlignment="Right" Margin="0,580,50,0" FontSize="20" Click="btnProjectsExit_Click"/>
             </Grid>
 
         </TabItem>
@@ -50,7 +51,7 @@
                 <Label Content="MCU HUB" Margin="0,10,0,0" FontSize="40" RenderTransformOrigin="0.5,0.5"/>
                 <Label Content="Create A Custom List" Margin="0,70,0,0"/>
                 <Label Content="List Name" HorizontalAlignment="Left" Margin="185,200,0,0"/>
-                <StackPanel x:Name="skplCreateList" Orientation="Vertical" HorizontalAlignment="Center" Height="480" Margin="0,120,0,0" VerticalAlignment="Top" Width="400" Background="White">
+                <StackPanel x:Name="skplCreateList" Orientation="Vertical" HorizontalAlignment="Center" Height="480" Margin="0,120,40,0" VerticalAlignment="Top" Width="400">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="1." Height="40" Margin="23,20,10,0"/>
                         <ComboBox x:Name="cbBoxCustomNum1" Width="325" Height="40" Margin="0,20,0,0"/>
@@ -96,6 +97,7 @@
                 <TextBlock x:Name="tblkCreateInstruction" Text="Click A Dropdown List To Select An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="24" Width="400"/>
                 <Button x:Name="btnSave" Content="Save List" HorizontalAlignment="Right" Margin="0,257,50,0" Width="350" Height="40" Click="btnSave_Click"/>
                 <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Right" Margin="0,317,50,0" Width="350" Height="40" Click="btnClear_Click"/>
+                <Button x:Name="btnCustomListExit" Content="Exit" Height="30" Width="150" HorizontalAlignment="Right" Margin="0,580,50,0" FontSize="20" Click="btnCustomListExit_Click"/>
             </Grid>
 
         </TabItem>

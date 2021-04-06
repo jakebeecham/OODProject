@@ -515,6 +515,12 @@ namespace MCU_Hub
             imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
             tblkDescription.Text = "Select a Project to View Description!";
         }
+
+        //Exit
+        private void btnProjectsExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
         #endregion
 
         #region CustomList Page Interactions
@@ -617,6 +623,12 @@ namespace MCU_Hub
             tbxListName.Text = "Enter the Name of your New List Here...";
         }
         #endregion
+        
+        //Exit
+        private void btnCustomListExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
         #endregion
     }
 }
