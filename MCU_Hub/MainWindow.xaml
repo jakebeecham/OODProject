@@ -34,9 +34,12 @@
                 <ComboBox x:Name="cbBoxFilter" Margin="228,70,0,0" Width="175" Height="38" SelectionChanged="cbBoxFilter_SelectionChanged"/>
                 <ListBox x:Name="lbxProjects" HorizontalAlignment="Left" Height="480" Margin="50,120,0,0" VerticalAlignment="Top" Width="400" FontSize="14" SelectionChanged="lbxProjects_SelectionChanged"/>
                 <Label x:Name="lblDescpTitle" Content="Project Description" HorizontalAlignment="Right" Margin="0,70,350,0"/>
-                <TextBlock x:Name="tblkDescription" HorizontalAlignment="Right" Height="480" Margin="0,120,50,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="18" Padding="50,100,0,1" Foreground="White" Text="Select a Project to View Description!"/>
-                <Rectangle Fill="White" HorizontalAlignment="Left" Height="505" Margin="478,106,0,0" VerticalAlignment="Top" Width="438"/>
-                <Image x:Name="imgProject" Height="480" Margin="530,120,0,0" Width="400" Source="Images/MarvelStudios.png"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="480" Width="860" Margin="0,120,50,0">
+                    <Image x:Name="imgProject" Height="480" Margin="60,0,0,0" Width="400" Source="Images/MarvelStudios.png"/>
+                    <TextBlock x:Name="tblkDescription" Height="480" Margin="-60,0,0,0" TextWrapping="Wrap" 
+                           VerticalAlignment="Top" Width="400" FontSize="18" Padding="50,75,0,50" Foreground="White" Grid.IsSharedSizeScope="True"/>
+                </StackPanel>
+                <Label x:Name="lblInstruction" Content="Select a Project to View Description!" HorizontalAlignment="Right" Margin="0,300,50,0"/>
                 <Button x:Name="btnProjectsExit" Content="Exit" Height="30" Width="150" HorizontalAlignment="Right" Margin="0,580,50,0" FontSize="20" Click="btnProjectsExit_Click"/>
             </Grid>
 
@@ -93,8 +96,11 @@
                         <ComboBox x:Name="cbBoxCustomNum10" Width="325" Height="40" Margin="0,5,0,0"/>
                     </StackPanel>
                 </StackPanel>
-                <TextBox x:Name="tbxListName" HorizontalAlignment="Left" Height="40" Margin="50,250,0,0" TextWrapping="Wrap" Text="Enter the Name of your New List Here..." VerticalAlignment="Top" Width="400" FontFamily="Arial" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GotFocus="tbxListName_GotFocus" LostFocus="tbxListName_LostFocus"/>
-                <TextBlock x:Name="tblkCreateInstruction" Text="Click A Dropdown List To Select An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,350,0,0" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="24" Width="400"/>
+                <TextBox x:Name="txbxListName" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="400" Margin="50,250,0,0" 
+                         TextWrapping="Wrap" Text="Enter the Name of your New List Here..." FontFamily="Arial" FontSize="16" 
+                         VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GotFocus="txbxListName_GotFocus" LostFocus="txbxListName_LostFocus"/>
+                <Label x:Name="lblCreateInstruction" Content="Click A Dropdown List To Select" HorizontalAlignment="Left" Margin="50,350,0,0"/>
+                <Label x:Name="lblCreateInstruction2" Content="An MCU Project For That Position!" HorizontalAlignment="Left" Margin="50,380,0,0"/>
                 <Button x:Name="btnSave" Content="Save List" HorizontalAlignment="Right" Margin="0,257,50,0" Width="350" Height="40" Click="btnSave_Click"/>
                 <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Right" Margin="0,317,50,0" Width="350" Height="40" Click="btnClear_Click"/>
                 <Button x:Name="btnCustomListExit" Content="Exit" Height="30" Width="150" HorizontalAlignment="Right" Margin="0,580,50,0" FontSize="20" Click="btnCustomListExit_Click"/>

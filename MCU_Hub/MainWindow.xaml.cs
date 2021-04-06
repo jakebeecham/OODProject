@@ -365,10 +365,13 @@ namespace MCU_Hub
         //Listbox Selection Changed Event
         private void lbxProjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Clear Instruction
+            lblInstruction.Content = "";
+            
             //Get selected project
             Project selectedProject = lbxProjects.SelectedItem as Project;
 
-            if (selectedProject != null)//Safety check
+            if (selectedProject != null)//Checking if a project is selected
             {
                 if (selectedProject is Film)//Checking If a Film
                 {
@@ -388,11 +391,6 @@ namespace MCU_Hub
                     //Setting Show Output
                     SetShowOutput(tempShow);
                 }
-            }
-            else//Display Error and Close
-            {
-                MessageBox.Show("ERROR!");
-                Environment.Exit(0);
             }
         }
 
@@ -461,12 +459,12 @@ namespace MCU_Hub
         private void SetFilmOutput(Film tempFilm)
         {
             //Setting Output
-            tblkDescription.Text = string.Format($"Title : {tempFilm.Title}" +
+            tblkDescription.Text = string.Format($"Title : {tempFilm.Title}\n" +
             $"\nRelease Date : {tempFilm.ReleaseDate.Date.ToString("d")}" +
             $"\nDuration : {tempFilm.Duration} minutes" +
-            $"\nRating : {tempFilm.Rating}" +
-            $"\nCast : {tempFilm.Cast}" +
-            $"\nDirector(s) : {tempFilm.Director}" +
+            $"\nRating : {tempFilm.Rating}\n" +
+            $"\nCast : {tempFilm.Cast}\n" +
+            $"\nDirector(s) : {tempFilm.Director}\n" +
             $"\nSales : {tempFilm.Sales:C}" +
             $"\nPhase : Phase {tempFilm.Phase}");
         }
@@ -496,13 +494,13 @@ namespace MCU_Hub
         private void SetShowOutput(Show tempShow)
         {
             //Setting Output
-            tblkDescription.Text = string.Format($"Title : {tempShow.Title}" +
+            tblkDescription.Text = string.Format($"Title : {tempShow.Title}\n" +
             $"\nRelease Date : {tempShow.ReleaseDate.Date.ToString("d")}" +
             $"\nDuration : {tempShow.Duration} minutes" +
-            $"\nRating : {tempShow.Rating}" +
-            $"\nCast : {tempShow.Cast}" +
-            $"\nCreator(s) : {tempShow.Creator}" +
             $"\nEpisodes : {tempShow.NumberOfEpisodes} Episodes" +
+            $"\nRating : {tempShow.Rating}\n" +
+            $"\nCast : {tempShow.Cast}\n" +
+            $"\nCreator(s) : {tempShow.Creator}\n" +
             $"\nSales : {tempShow.Sales:C}" +
             $"\nPhase : Phase {tempShow.Phase}");
         }
@@ -513,7 +511,8 @@ namespace MCU_Hub
         {
             lbxProjects.SelectedItem = null;
             imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
-            tblkDescription.Text = "Select a Project to View Description!";
+            tblkDescription.Text = "";
+            lblInstruction.Content = "Select a Project to View Description!";
         }
 
         //Exit
@@ -525,21 +524,21 @@ namespace MCU_Hub
 
         #region CustomList Page Interactions
         //Listbox is in focus event
-        private void tbxListName_GotFocus(object sender, RoutedEventArgs e)
+        private void txbxListName_GotFocus(object sender, RoutedEventArgs e)
         {
             //If the Listbox text is on default, clear text
             //Otherwise leave the text that is there
-            if(tbxListName.Text == "Enter the Name of your New List Here...")
-                tbxListName.Text = "";
+            if(txbxListName.Text == "Enter the Name of your New List Here...")
+                txbxListName.Text = "";
         }
 
         //Listbox lose focus event
-        private void tbxListName_LostFocus(object sender, RoutedEventArgs e)
+        private void txbxListName_LostFocus(object sender, RoutedEventArgs e)
         {
             //If listbox text is clear, set text to default
             //Otherwise leave the text what it is
-            if (tbxListName.Text == "")
-                tbxListName.Text = "Enter the Name of your New List Here...";
+            if (txbxListName.Text == "")
+                txbxListName.Text = "Enter the Name of your New List Here...";
         }
 
         //Save Custom List To File Feature
@@ -548,8 +547,8 @@ namespace MCU_Hub
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             //If the name listbox is not empty or at default, as a name is needed to save
-            if(tbxListName.Text != "" && 
-                tbxListName.Text != "Enter the Name of your New List Here...")
+            if(txbxListName.Text != "" && 
+                txbxListName.Text != "Enter the Name of your New List Here...")
             {
                 //Get the Info Enter by User
                 GetCustomListInfo();
@@ -572,7 +571,7 @@ namespace MCU_Hub
             }
 
             //Set the list name to the name entered by the user
-            listName = tbxListName.Text;
+            listName = txbxListName.Text;
         }
 
         //Save CustomList to File using JSON
@@ -620,7 +619,7 @@ namespace MCU_Hub
                 comboBox.SelectedItem = null;
 
             myCustomList.Clear();
-            tbxListName.Text = "Enter the Name of your New List Here...";
+            txbxListName.Text = "Enter the Name of your New List Here...";
         }
         #endregion
         
