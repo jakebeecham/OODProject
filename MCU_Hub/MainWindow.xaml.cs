@@ -580,13 +580,19 @@ namespace MCU_Hub
             //Check if there are projects entered into our Custom List, are there must be at least 1 entry to save
             if (myCustomList.Count > 0)
             {
+                //Get the names from the projects in the Custom List
+                List<string> names = new List<string>();
+                foreach (Project item in myCustomList)
+                    names.Add(item.Title);
+
                 //Using JSON, Get all our data we want to save
-                data = JsonConvert.SerializeObject(myCustomList, Formatting.Indented);
+                data = JsonConvert.SerializeObject(names, Formatting.Indented);
 
                 //Using JSON, write all our data out to file, therefore saving it
                 using (StreamWriter sw = new StreamWriter("../CustomLists/myCustomLists.json"))
                 {
-                    sw.Write(listName + ":");
+                    sw.WriteLine("Lists are Ordered Starting with 1!");
+                    sw.WriteLine(listName + " :");
                     sw.Write(data);
                     sw.Close();
                 }
