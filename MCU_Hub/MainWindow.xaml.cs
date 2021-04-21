@@ -122,6 +122,9 @@ namespace MCU_Hub
             Film film23 = new Film("Black Widow", new DateTime(2021, 7, 9), 133, "12+", "Cate Shortland",
                 "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle",
                 LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+            Film film24 = new Film("Shang-Chi and the Legend of The Ten Rings", new DateTime(2021, 9, 3), 133, "12+", "Destin Daniel Cretton",
+                "Simu Liu, Awkwafina, Tony Leung, Michelle Yeoh, Fala Chen, Florian Munteanu",
+                LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
             #endregion
 
             //Adding All Projects to Collections
@@ -154,6 +157,7 @@ namespace MCU_Hub
             allProjects.Add(show1);
             allProjects.Add(show2);
             allProjects.Add(film22);
+            allProjects.Add(film24);
             #endregion
             //Adding to Chronological List, adding them into the list in chronological order
             #region Chronological
@@ -183,6 +187,7 @@ namespace MCU_Hub
             chronologicalOrder.Add(show1);
             chronologicalOrder.Add(show2);
             chronologicalOrder.Add(film22);
+            chronologicalOrder.Add(film24);
             #endregion
             //Adding to Dictionary, adding all films then shows
             #region Dictionary
@@ -210,6 +215,7 @@ namespace MCU_Hub
             projectDictionary.Add("film21", film21);
             projectDictionary.Add("film22", film22);
             projectDictionary.Add("film23", film23);
+            projectDictionary.Add("film24", film24);
             projectDictionary.Add("show1", show1);
             projectDictionary.Add("show2", show2);
             projectDictionary.Add("show3", show3);
@@ -451,6 +457,8 @@ namespace MCU_Hub
                         imgProject.Source = new BitmapImage(new Uri(@"/Images/film22.jpg", UriKind.Relative));
                     if (i + 1 == 23)
                         imgProject.Source = new BitmapImage(new Uri(@"/Images/film23.jpg", UriKind.Relative));
+                    if (i + 1 == 24)
+                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film24.jpg", UriKind.Relative));
                 }
             }
         }
@@ -472,9 +480,9 @@ namespace MCU_Hub
         //Set Show Images
         private void SetShowImages(Project selectedProject)
         {
-            //Dictionary.Count - 23 is all the Shows, as there are 23 Films
+            //Dictionary.Count - 24 is all the Shows, as there are 24 Films
             //For loop loops around the same number of times as the count of shows
-            for (int i = 0; i < projectDictionary.Count - 23; i++)
+            for (int i = 0; i < projectDictionary.Count - 24; i++)
             {
                 //If checks the name of show to Dictionary Key
                 //Using i and the Dictionary Key to get Images
