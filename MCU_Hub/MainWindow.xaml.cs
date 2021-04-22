@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +22,7 @@ namespace MCU_Hub
         List<Project> myCustomList = new List<Project>();//List of projects for Custom List
         string listName, data;//string for Custom List name, string for custom list data to be saved to file
         Random rng = new Random();//Random for Sales figures
-        Dictionary<string, Project> projectDictionary = new Dictionary<string, Project>();//Dictionary of projects to assign images
+        MCUHubModelContainer db;//Reference to Database
 
         public MainWindow()
         {
@@ -31,6 +32,9 @@ namespace MCU_Hub
         //Window Loaded Event
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Database Setup
+            db = new MCUHubModelContainer();
+
             //Project Window Setup
             #region Project Window
             //Populate Combo Box
@@ -188,37 +192,6 @@ namespace MCU_Hub
             chronologicalOrder.Add(show2);
             chronologicalOrder.Add(film22);
             chronologicalOrder.Add(film24);
-            #endregion
-            //Adding to Dictionary, adding all films then shows
-            #region Dictionary
-            //Add to Dictionary - To Control Images
-            projectDictionary.Add("film1", film1);
-            projectDictionary.Add("film2", film2);
-            projectDictionary.Add("film3", film3);
-            projectDictionary.Add("film4", film4);
-            projectDictionary.Add("film5", film5);
-            projectDictionary.Add("film6", film6);
-            projectDictionary.Add("film7", film7);
-            projectDictionary.Add("film8", film8);
-            projectDictionary.Add("film9", film9);
-            projectDictionary.Add("film10", film10);
-            projectDictionary.Add("film11", film11);
-            projectDictionary.Add("film12", film12);
-            projectDictionary.Add("film13", film13);
-            projectDictionary.Add("film14", film14);
-            projectDictionary.Add("film15", film15);
-            projectDictionary.Add("film16", film16);
-            projectDictionary.Add("film17", film17);
-            projectDictionary.Add("film18", film18);
-            projectDictionary.Add("film19", film19);
-            projectDictionary.Add("film20", film20);
-            projectDictionary.Add("film21", film21);
-            projectDictionary.Add("film22", film22);
-            projectDictionary.Add("film23", film23);
-            projectDictionary.Add("film24", film24);
-            projectDictionary.Add("show1", show1);
-            projectDictionary.Add("show2", show2);
-            projectDictionary.Add("show3", show3);
             #endregion
             #endregion
 
@@ -382,7 +355,7 @@ namespace MCU_Hub
                 if (selectedProject is Film)//Checking If a Film
                 {
                     //Setting Image
-                    SetFilmImages(selectedProject);
+                    SetProjectImage(selectedProject);
                     //Casting Selected Project to Film as it is a Film
                     Film tempFilm = selectedProject as Film;
                     //Setting Film Output
@@ -391,7 +364,7 @@ namespace MCU_Hub
                 if (selectedProject is Show)//Checking If a Show
                 {
                     //Setting Image
-                    SetShowImages(selectedProject);
+                    SetProjectImage(selectedProject);
                     //Casting to Show
                     Show tempShow = selectedProject as Show;
                     //Setting Show Output
@@ -400,67 +373,18 @@ namespace MCU_Hub
             }
         }
 
-        //Set Film Images
-        private void SetFilmImages(Project selectedProject)
+        //Set Project Image
+        private void SetProjectImage(Project selectedProject)
         {
-            //Dictionary.Count - 3 is all the Films, as there are 3 Shows
-            //For loop loops around the same number of times as the count of films
-            for (int i = 0; i < projectDictionary.Count - 3; i++)
-            {
-                //If checks the name of film to Dictionary Key
-                //Using i and the Dictionary Key to get Images
-                if (selectedProject == projectDictionary["film" + (i + 1)])
-                {
-                    if (i + 1 == 1)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film1.jpg", UriKind.Relative));
-                    if (i + 1 == 2)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film2.jpg", UriKind.Relative));
-                    if (i + 1 == 3)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film3.jpg", UriKind.Relative));
-                    if (i + 1 == 4)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film4.jpg", UriKind.Relative));
-                    if (i + 1 == 5)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film5.jpg", UriKind.Relative));
-                    if (i + 1 == 6)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film6.jpg", UriKind.Relative));
-                    if (i + 1 == 7)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film7.jpg", UriKind.Relative));
-                    if (i + 1 == 8)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film8.jpg", UriKind.Relative));
-                    if (i + 1 == 9)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film9.jpg", UriKind.Relative));
-                    if (i + 1 == 10)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film10.jpg", UriKind.Relative));
-                    if (i + 1 == 11)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film11.jpg", UriKind.Relative));
-                    if (i + 1 == 12)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film12.jpg", UriKind.Relative));
-                    if (i + 1 == 13)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film13.jpg", UriKind.Relative));
-                    if (i + 1 == 14)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film14.jpg", UriKind.Relative));
-                    if (i + 1 == 15)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film15.jpg", UriKind.Relative));
-                    if (i + 1 == 16)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film16.jpg", UriKind.Relative));
-                    if (i + 1 == 17)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film17.jpg", UriKind.Relative));
-                    if (i + 1 == 18)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film18.jpg", UriKind.Relative));
-                    if (i + 1 == 19)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film19.jpg", UriKind.Relative));
-                    if (i + 1 == 20)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film20.jpg", UriKind.Relative));
-                    if (i + 1 == 21)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film21.jpg", UriKind.Relative));
-                    if (i + 1 == 22)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film22.jpg", UriKind.Relative));
-                    if (i + 1 == 23)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film23.jpg", UriKind.Relative));
-                    if (i + 1 == 24)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/film24.jpg", UriKind.Relative));
-                }
-            }
+            //Using query to call the database and search for image
+            //Checking if the Name of the projects' match
+            var query = db.Images
+                        .Where(p => p.Name == selectedProject.Title)
+                        .Select(p => p.Source);
+
+            //Set the img source to the correct image and Display
+            imgProject.Source = new BitmapImage(
+                new Uri(query.First().ToString(), UriKind.Relative));
         }
 
         //Set Film Output
@@ -475,27 +399,6 @@ namespace MCU_Hub
             $"\nDirector(s) : {tempFilm.Director}\n" +
             $"\nSales : {tempFilm.Sales:C}" +
             $"\nPhase : Phase {tempFilm.Phase}");
-        }
-
-        //Set Show Images
-        private void SetShowImages(Project selectedProject)
-        {
-            //Dictionary.Count - 24 is all the Shows, as there are 24 Films
-            //For loop loops around the same number of times as the count of shows
-            for (int i = 0; i < projectDictionary.Count - 24; i++)
-            {
-                //If checks the name of show to Dictionary Key
-                //Using i and the Dictionary Key to get Images
-                if (selectedProject == projectDictionary["show" + (i + 1)])
-                {
-                    if (i + 1 == 1)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show1.jpg", UriKind.Relative));
-                    if (i + 1 == 2)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show2.jpg", UriKind.Relative));
-                    if (i + 1 == 3)
-                        imgProject.Source = new BitmapImage(new Uri(@"/Images/show3.jpg", UriKind.Relative));
-                }
-            }
         }
 
         //Set Show Output
@@ -518,7 +421,12 @@ namespace MCU_Hub
         private void Reset()
         {
             lbxProjects.SelectedItem = null;
-            imgProject.Source = new BitmapImage(new Uri(@"/Images/MarvelStudios.png", UriKind.Relative));
+            //Using query to call database and retrieve default image
+            var query = db.Images
+                .Where(i => i.Name == "Marvel")
+                .Select(i => i.Source);
+            imgProject.Source = new BitmapImage(
+                new Uri(query.First().ToString(), UriKind.Relative));
             tblkDescription.Text = "";
             lblInstruction.Content = "Select a Project to View Description!";
         }
@@ -597,9 +505,9 @@ namespace MCU_Hub
                 data = JsonConvert.SerializeObject(names, Formatting.Indented);
 
                 //Using JSON, write all our data out to file, therefore saving it
-                using (StreamWriter sw = new StreamWriter("../CustomLists/myCustomLists.json"))
+                using (StreamWriter sw = new StreamWriter("../CustomLists/myCustomList.json"))
                 {
-                    sw.WriteLine("Lists are Ordered Starting with 1!");
+                    sw.WriteLine("Lists are Ordered Starting at 1!");
                     sw.WriteLine(listName + " :");
                     sw.Write(data);
                     sw.Close();
