@@ -9,17 +9,13 @@ namespace MCU_Hub.Classes
         //Setting Properties
         #region Properties
         public string Title { get; set; }
-
         public DateTime ReleaseDate { get; set; }
-
         public int Duration { get; set; }
-
         public string Rating { get; set; }
-
         public string Cast { get; set; }
-
         public decimal Sales { get; set; }
-
+        public string ProjectImage { get; set; }
+        public string Type { get; set; }
         public PhaseType Phase { get; set; }
         #endregion
 
@@ -48,7 +44,7 @@ namespace MCU_Hub.Classes
         //Overriding ToString
         public override string ToString()
         {
-            return Title + " | Phase " + Phase;
+            return Title + " | Phase " + Phase + " | " + Type;
         }
 
         //Using CompareTo to Sort in order of Release, Implementing Interface

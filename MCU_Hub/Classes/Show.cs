@@ -19,21 +19,13 @@ namespace MCU_Hub.Classes
             //Setting Values
             Creator = creator;
             NumberOfEpisodes = numOfEpisodes;
+            Type = "Show";
         }
 
         public Show(string title, DateTime releaseDate, int duration) :
             this(title, releaseDate, duration, 0, "0", "Unknown", "Unknown", 0, PhaseType.Zero) { }
 
         public Show() : this("Unknown", new DateTime(2000, 1, 1), 0) { }
-        #endregion
-
-        //Setting Methods
-        #region Methods
-        //Overriding ToString
-        public override string ToString()
-        {
-            return base.ToString() + " | Show";
-        }
         #endregion
     }
 }

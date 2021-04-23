@@ -17,21 +17,13 @@ namespace MCU_Hub.Classes
         {
             //Setting Values
             Director = director;
+            Type = "Film";
         }
 
         public Film(string title, DateTime releaseDate, int duration) :
             this(title, releaseDate, duration, "0", "Unknown", "Unknown", 0, PhaseType.Zero) { }
 
         public Film() : this("Unknown", new DateTime(2000, 1, 1), 0) { }
-        #endregion
-
-        //Setting Methods
-        #region Methods
-        //Overriding ToString
-        public override string ToString()
-        {
-            return base.ToString() + " | Film";
-        }
         #endregion
     }
 }

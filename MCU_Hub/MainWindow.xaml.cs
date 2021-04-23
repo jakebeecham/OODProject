@@ -195,6 +195,20 @@ namespace MCU_Hub
             #endregion
             #endregion
 
+            //Setting Images for All Projects
+            #region Setting Images
+            //Go through each project and pull the correct image from the Database
+            foreach (Project project in allProjects)
+            {
+                //Using query to call the database and search for image
+                //Checking if the Name of the projects' match
+                var query = db.Images
+                    .Where(i => i.Name == project.Title)
+                    .Select(i => i.Source);
+                project.ProjectImage = query.First().ToString();
+            }
+            #endregion
+
             //Sorting in Release Order
             //Uses CompareTo Method to sort by ReleaseDate to get Release Order
             allProjects.Sort();
@@ -354,8 +368,8 @@ namespace MCU_Hub
             {
                 if (selectedProject is Film)//Checking If a Film
                 {
-                    //Setting Image
-                    SetProjectImage(selectedProject);
+                    //Setting Image Display
+                    SetImageDisplay(selectedProject);
                     //Casting Selected Project to Film as it is a Film
                     Film tempFilm = selectedProject as Film;
                     //Setting Film Output
@@ -363,8 +377,8 @@ namespace MCU_Hub
                 }
                 if (selectedProject is Show)//Checking If a Show
                 {
-                    //Setting Image
-                    SetProjectImage(selectedProject);
+                    //Setting Image Display
+                    SetImageDisplay(selectedProject);
                     //Casting to Show
                     Show tempShow = selectedProject as Show;
                     //Setting Show Output
@@ -373,18 +387,12 @@ namespace MCU_Hub
             }
         }
 
-        //Set Project Image
-        private void SetProjectImage(Project selectedProject)
+        //Set Image Display
+        private void SetImageDisplay(Project selectedProject)
         {
-            //Using query to call the database and search for image
-            //Checking if the Name of the projects' match
-            var query = db.Images
-                        .Where(p => p.Name == selectedProject.Title)
-                        .Select(p => p.Source);
-
             //Set the img source to the correct image and Display
             imgProject.Source = new BitmapImage(
-                new Uri(query.First().ToString(), UriKind.Relative));
+                new Uri(selectedProject.ProjectImage, UriKind.Relative));
         }
 
         //Set Film Output
