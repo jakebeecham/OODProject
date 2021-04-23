@@ -47,88 +47,88 @@ namespace MCU_Hub
             //Phase One
             Film film1 = new Film("Iron Man", new DateTime(2008, 5, 2), 127, "12+", "Jon Favreau",
                 "Robert Downey Jr., Gwyneth Paltrow, Jeff Bridges, Terrence Howard, Jon Favreau, Paul Bettany", 
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.One);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.One);
             Film film2 = new Film("Iron Man 2", new DateTime(2010, 4, 30), 125, "12+", "Jon Favreau", 
                 "Robert Downey Jr., Gwyneth Paltrow, Don Cheadle, Scarlett Johansson, Sam Rockwell, Clark Gregg", 
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.One);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.One);
             Film film3 = new Film("Thor", new DateTime(2011, 4, 27), 116, "12+", "Kenneth Branagh",
                 "Chris Hemsworth, Natalie Portman, Tom Hiddleston, Anthony Hopkins, Stellan Skarsgard, Idris Elba", 
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.One);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.One);
             Film film4 = new Film("Captain America: The First Avenger", new DateTime(2011, 7, 29), 126, "12+", "Joe Johnston",
                 "Chris Evans, Hayley Atwell, Hugo Weaving, Sebastian Stan, Tommy Lee Jones, Dominic Cooper", 
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.One);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.One);
             Film film5 = new Film("The Avengers", new DateTime(2012, 5, 4), 145, "12+", "Joss Whedon", 
                 "Robert Downey Jr., Chris Evans, Chris Hemsworth, Mark Ruffalo, Scarlett Johansson, Jeremy Renner",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.One);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.One);
             //Phase Two
             Film film6 = new Film("Iron Man 3", new DateTime(2013, 4, 26), 132, "12+", "Shane Black", 
                 "Robert Downey Jr., Gwyneth Paltrow, Don Cheadle, Guy Pearce, Paul Bettany, Ty Simpkins",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             Film film7 = new Film("Thor: The Dark World", new DateTime(2013, 11, 8), 114, "12+", "Alan Taylor",
                 "Chris Hemsworth, Natalie Portman, Tom Hiddleston, Anthony Hopkins, Rene Russo, Stellan Skarsgard",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             Film film8 = new Film("Captain America: The Winter Soldier", new DateTime(2014, 3, 26), 137, "12+", "Anthony Russo, Joe Russo",
                 "Chris Evans, Scarlett Johansson, Sebastian Stan, Anthony Mackie, Robert Redford, Cobie Smulders",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             Film film9 = new Film("Guardians of the Galaxy", new DateTime(2014, 7, 31), 122, "12+", "James Gunn",
                 "Chris Pratt, Zoe Saldana, Dave Bautista, Bradley Cooper, Vin Diesel, Lee Pace",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             Film film10 = new Film("Avengers: Age of Ultron", new DateTime(2015, 4, 23), 143, "12+", "Joss Whedon",
                 "Robert Downey Jr., Chris Evans, Chris Hemsworth, Mark Ruffalo, Scarlett Johansson, Jeremy Renner",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             Film film11 = new Film("Ant-Man", new DateTime(2015, 7, 17), 118, "12+", "Peyton Reed",
                 "Paul Rudd, Evangeline Lilly, Michael Douglas, Corey Stoll, Michael Pena, Bobby Cannavale",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Two);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Two);
             //Phase Three
             Film film12 = new Film("Captain America: Civil War", new DateTime(2016, 4, 29), 149, "12+", "Anthony Russo, Joe Russo",
                 "Chris Evans, Robert Downey Jr., Scarlett Johansson, Sebastian Stan, Anthony Mackie, Chadwick Boseman",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film13 = new Film("Doctor Strange", new DateTime(2016, 10, 25), 116, "12+", "Scott Derrickson",
                 "Benedict Cumberbatch, Chiwetel Ejiofor, Rachel McAdams, Tilda Swinton, Mads Mikkelsen, Benedict Wong",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film14 = new Film("Guardians of the Galaxy Vol. 2", new DateTime(2017, 4, 28), 137, "12+", "James Gunn",
                 "Chris Pratt, Zoe Saldana, Dave Bautista, Bradley Cooper, Michael Rooker, Karen Gillan",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film15 = new Film("Spider-Man: Homecoming", new DateTime(2017, 7, 7), 133, "12+", "Jon Watts",
                 "Tom Holland, Michael Keaton, Zendaya, Jacob Batalon, Jon Favreau, Marisa Tomei",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film16 = new Film("Thor: Ragnorok", new DateTime(2017, 10, 24), 131, "12+", "Taika Waititi",
                 "Chris Hemsworth, Tom Hiddleston, Cate Blanchett, Idris Elba, Jeff Goldblum, Tessa Thompson",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film17 = new Film("Black Panther", new DateTime(2018, 2, 13), 136, "12+", "Ryan Coogler",
                 "Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira, Letitia Wright, Martin Freeman",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film18 = new Film("Avengers: Infinity War", new DateTime(2018, 4, 26), 151, "12+", "Anthony Russo, Joe Russo",
                 "Robert Downey Jr., Chris Evans, Chris Hemsworth, Mark Ruffalo, Scarlett Johansson, Josh Brolin",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film19 = new Film("Ant-Man and the Wasp", new DateTime(2018, 8, 2), 120, "12+", "Peyton Reed",
                 "Paul Rudd, Evangeline Lilly, Michael Douglas, Hannah John-Kamen, Michael Pena, Michelle Pfeiffer",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film20 = new Film("Captain Marvel", new DateTime(2019, 3, 8), 127, "12+", "Anna Boden, Ryan Fleck",
                 "Brie Larson, Samuel L. Jackson, Ben Mendelsohn, Jude Law, Annette Bening, Lashana Lynch",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film21 = new Film("Avengers: Endgame", new DateTime(2019, 4, 25), 183, "12+", "Anthony Russo, Joe Russo",
                 "Robert Downey Jr., Chris Evans, Chris Hemsworth, Mark Ruffalo, Scarlett Johansson, Jeremy Renner",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             Film film22 = new Film("Spider-Man: Far From Home", new DateTime(2019, 7, 2), 129, "12+", "Jon Watts",
                 "Tom Holland, Jake Gyllenhaal, Samuel L. Jackson, Zendaya, Cobie Smulders, Jon Favreau",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Three);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Three);
             //Phase Four
             Show show1 = new Show("WandaVision", new DateTime(2021, 1, 15), 360, 9, "12+", "Matt Shakman, Jac Schaeffer",
                 "Elizabeth Olsen, Paul Bettany, Teyonah Paris, Kathryn Hahn, Randall Park, Kat Dennings",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Four);
             Show show2 = new Show("The Falcon and the Winter Soldier", new DateTime(2021, 3, 19), 360, 6, "12+", "Kari Skogland, Malcolm Spellman",
                 "Anthony Mackie, Sebastian Stan, Daniel Bruhl, Emily VanCamp, Wyatt Russell",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Four);
             //Unreleased
             Show show3 = new Show("Loki", new DateTime(2021, 6, 11), 360, 6, "12+", "Kate Herron, Michael Waldron",
-                "Tom Hiddleston, Owen Wilson", LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+                "Tom Hiddleston, Owen Wilson", LongRandom(100000000, 3000000000, rng), Project.PhaseType.Four);
             Film film23 = new Film("Black Widow", new DateTime(2021, 7, 9), 133, "12+", "Cate Shortland",
                 "Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz, William Hurt, O-T Fagbenle",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Four);
             Film film24 = new Film("Shang-Chi and the Legend of The Ten Rings", new DateTime(2021, 9, 3), 133, "12+", "Destin Daniel Cretton",
                 "Simu Liu, Awkwafina, Tony Leung, Michelle Yeoh, Fala Chen, Florian Munteanu",
-                LongRandom(100000000, 500000000, rng), Project.PhaseType.Four);
+                LongRandom(100000000, 3000000000, rng), Project.PhaseType.Four);
             #endregion
 
             //Adding All Projects to Collections
@@ -212,7 +212,7 @@ namespace MCU_Hub
 
         //Item Researched from the Internet
         //Method to obtain a Random long number
-        private long LongRandom(long min, long max, Random rand)
+        public long LongRandom(long min, long max, Random rand)
         {
             byte[] buf = new byte[8];
             rand.NextBytes(buf);
