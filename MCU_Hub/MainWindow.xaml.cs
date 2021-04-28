@@ -12,6 +12,9 @@ namespace MCU_Hub
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// 
+    /// DATABASE FILE - MCUHub.mdf - Is stored in OOD_Project Folder, Solution Folder.
+    /// GITHUB LINK - https://github.com/S00197638/OODProject
     /// </summary>
     public partial class MainWindow : Window
     {
